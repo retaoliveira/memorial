@@ -1,0 +1,66 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      depth: 3
+      collapse: subsection
+      color: #447178
+      before: |
+        <li><a href="./">Memorial de Renata Lúcia Magalhães de Oliveira</a></li>
+      after: |
+        <li><a href="https://retaoliveira.github.io/blog" target="blank">Mais informações</a></li>
+        <li><a href="https://retaoliveira.github.io/places" target="blank">Cursos e blog</a></li>
+    download: ["pdf", "epub"]
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: yes
+      twitter: yes
+      linkedin: yes
+      weibo: no
+      instapaper: no
+      vk: no
+      whatsapp: no
+      all: ['facebook', 'twitter', 'linkedin', 'github', 'weibo', 'instapaper']
+    info: yes
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  citation_package: natbib
+  latex_engine: xelatex
+  dev: "cairo_pdf"
+  pandoc_args: --top-level-division=chapter
+  keep_tex: yes
+  documentclass: memoir
+  lot: yes
+  lof: yes
+  fontsize: 12pt
+  monofont: "Source Code Pro"
+  monofontoptions: "Scale=0.7"
+  toc_unnumbered: no
+  toc_appendix: yes
+  quote_footer: ["\\VA{", "}{}"]
+  highlight_bw: yes
+  toccolor: 'red'
+bookdown::epub_book: default
+bookdown::pdf_document:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+  dev: cairo_pdf
+  toc: true
+  toc_depth: 2
+  number_sections: true
+  fig_width: 7
+  fig_height: 6
+  fontsize: 12pt
+  documentclass: memoir
+bookdown::html_book:
+  theme: united
+
+
